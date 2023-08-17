@@ -15,6 +15,10 @@
     "scraper-tiktok"
   ],
   "author": "Lantium",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lantiumBot/scraper-tiktok.git"
+  },
   "license": "WTFPL",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
