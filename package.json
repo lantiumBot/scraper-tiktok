@@ -1,6 +1,6 @@
 {
   "name": "scraper-tiktok",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Un module Node.js pour extraire les détails de la dernière vidéo TikTok d'un utilisateur spécifié, y compris les informations de profil.",
   "main": "index.js",
   "scripts": {
