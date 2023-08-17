@@ -1,0 +1,27 @@
+{
+  "name": "scraper-tiktok",
+  "version": "1.0.2",
+  "description": "Un module Node.js pour extraire les détails de la dernière vidéo TikTok d'un utilisateur spécifié, y compris les informations de profil.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/*Test.js"
+  },
+  "keywords": [
+    "tiktok",
+    "lantium",
+    "scraper",
+    "nodejs",
+    "tiktok-scraper",
+    "scraper-tiktok"
+  ],
+  "author": "Lantium",
+  "license": "WTFPL",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^21.0.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
+}
