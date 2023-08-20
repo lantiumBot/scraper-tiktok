@@ -21,10 +21,9 @@ async function getLastTikTokVideo(username, retryCount = 0) {
   const $ = cheerio.load(htmlPage);
 
   // Vérifier si le compte TikTok existe
-  const accountNotFound =
-    $('p:contains("Ce compte est introuvable")').length > 0;
-  if (accountNotFound) {
-    throw new Error("Le compte TikTok spécifié est introuvable.");
+  const accountExists = $('[data-e2e="user-post-item-list"]').length > 0;
+  if (!accountExists) {
+    throw new Error("Le compte TikTok spécifié est introuvable ou il n'y a pas de vidéos.");
   }
 
   // Récupérer la description de la première vidéo
@@ -55,7 +54,7 @@ async function getLastTikTokVideo(username, retryCount = 0) {
       return await getLastTikTokVideo(username, retryCount + 1);
     } else {
       throw new Error(
-        "Impossible de récupérer le lien de la vidéo TikTok après plusieurs tentatives.\nVérifie que le compte a bien une vidéo ou\nOuvre une issue sur Github."
+        "Impossible de récupérer le lien de la vidéo TikTok après plusieurs tentatives.\nOuvre une issue sur Github."
       );
     }
   }

@@ -17,10 +17,10 @@ describe('TikTok Scraper', function () {
     });
     it('should return an error if user does not exist', async function () {
         try {
-            await getLastTikTokVideo('lan7ium123');
+            await getLastTikTokVideo('lan7iu');
             throw new Error('Je m’attendais à une erreur, mais je n’en ai pas eu une');
         } catch (error) {
-            expect(error.message).to.equal('Le compte TikTok spécifié est introuvable.');
+            expect(error.message).to.equal("Le compte TikTok spécifié est introuvable ou il n'y a pas de vidéos.");
         }
     });
     it('should return an error if user has no videos', async function () {
@@ -28,7 +28,7 @@ describe('TikTok Scraper', function () {
             await getLastTikTokVideo('lantiumfm');
             throw new Error('Expected an error but did not get one');
         } catch (error) {
-            expect(error.message).to.equal('Impossible de récupérer le lien de la vidéo TikTok après plusieurs tentatives.\nVérifie que le compte a bien une vidéo ou\nOuvre une issue sur Github.');
+            expect(error.message).to.equal("Le compte TikTok spécifié est introuvable ou il n'y a pas de vidéos.");
         }
     });
 });
