@@ -7,6 +7,10 @@ et ce projet adhère au [Versionnement Sémantique](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2024-07-15
+### Changed
+- Modification de Puppeteer pour y ajouter puppeteer-extra et puppeteer-extra-plugin-stealth
+
 ## [1.0.4] - 2023-08-20
 ### Added
 - Ajout d'une vérification pour déterminer si un compte TikTok existe en utilisant l'attribut `data-e2e="user-post-item-list"`.

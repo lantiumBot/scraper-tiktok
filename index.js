@@ -1,11 +1,18 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-extra");
+const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+const stealth = StealthPlugin();
+stealth.enabledEvasions.delete("user-agent-override");
+puppeteer.use(stealth);
 const cheerio = require("cheerio");
 
 const getInfo = async function (username) {
-  const browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox'] });
+  const browser = await puppeteer.launch({ 
+    headless: false, 
+    args: ['--no-sandbox'] 
+  });
   const page = await browser.newPage();
   await page.goto(`https://www.tiktok.com/@${username}`);
-
+  
   // Récupérer le contenu HTML de la page
   const content = await page.content();
 
